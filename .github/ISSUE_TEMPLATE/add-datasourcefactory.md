@@ -13,6 +13,7 @@ Even though it can be implemented by clients it is advised that JDBC driver vend
 1. The vendor has the best knowledge how to create and configure the participating objects.
 2. Changes in the internal implementation, e.g. refactoring of class names can be reflected an managed easier in the original repository
 3. No gap between deployment of new version and connector code
-4. For non-osgi users, this is completely transparent and the is no need for them to change, but OSGi users will be happy to not reinvent the wheel, the library can just be dropped inside a framework and seaming less integrate, for example with the [JPA Specification](http://docs.osgi.org/specification/osgi.cmpn/8.0.0/service.jpa.html). 
+4. For non-osgi users, this is completely transparent and the is no need for them to change, but OSGi users will be happy to not reinvent the wheel, the library can just be dropped inside a framework and seaming less integrate, for example with the [JPA Specification](http://docs.osgi.org/specification/osgi.cmpn/8.0.0/service.jpa.html).
+5. No need to export any packages (in the context of OSGi) as consumers do not need to access the internal state.
 
 Because of this I'd like to propose adding an implementation for a [DataSourceFactory](https://docs.osgi.org/specification/osgi.cmpn/8.0.0/service.jdbc.html#org.osgi.service.jdbc.DataSourceFactory) in this repository and offering to contribute the inital implementation.
